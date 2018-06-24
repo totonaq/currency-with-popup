@@ -1,0 +1,297 @@
+body {
+	font-size: 16px;
+}
+h1, h2, h3, p {
+	margin: 0;
+	padding: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+td {
+	padding: 0;
+}
+
+.app {
+	background-color: #e3f4f5;
+	box-sizing: border-box;
+	min-height: 100vh;
+	padding: 30px;
+}
+.app-header {
+	margin: 15px auto;
+	max-width: 1368px;
+	padding: 0;
+	text-transform: uppercase;
+}
+.app-header__text {
+	margin: 15px;
+}
+
+
+.app-content {
+	max-width: 1368px;
+	margin: auto;
+}
+.app-content-header {
+	font-size: 1rem;
+	margin: 20px 0 0 15px;
+}
+.app-content-currency-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	list-style-type: none;
+	-webkit-padding-start: 0px;
+}
+.app-content-currency-list-item {
+	background-color: #fff;
+	cursor: pointer;
+	margin: 20px 15px;
+	padding: 15px 10px;
+	transition: all .1s ease-in-out;
+	width: 130px;
+}
+.app-content-currency-list-item:hover {
+	box-shadow: -4px 4px 10px #555;
+	transform: scale(1.02);
+}
+.app-content-currency-list-item__title {
+	color: #555;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+.app-content-currency-list-item__title.down {
+	color: #eb5757;
+}
+.app-content-currency-list-item__title.up {
+	color: #219653;
+}
+.app-content-currency-list-item__value {
+	font-size: 1rem;
+	font-weight: bold;
+	margin: 0;
+	text-align: right;
+}
+.app-content-currency-list-item__value span {
+	position: relative;
+}
+.app-content-currency-list-item__value span:before,
+.app-content-popup-info-header__value:before {
+	content: '';
+	position: absolute;
+}
+.app-content-currency-list-item__value span:before {
+	height: 14px;
+	left: -20px;
+	width: 14px;
+}
+.app-content-popup-info-header__value:before {
+	height: 20px;
+	left: -25px;
+	top: 4px;
+	width: 20px;
+}
+.app-content-currency-list-item__value.down span:before,
+.app-content-popup-info-header__value.down:before {
+	background: url('./../icons/down.svg') 100% 100%/cover no-repeat;
+}
+.app-content-currency-list-item__value.up span:before,
+.app-content-popup-info-header__value.up:before {
+	background: url('./../icons/up.svg') 100% 100%/cover no-repeat;
+}
+
+
+.app-content-popup-wrap {
+	background-color: rgba(0,0,0,.85);
+	bottom: 0;
+  box-sizing: border-box;
+  display: block;
+  height: 100vh;
+  left: 0;
+  padding: 50px;
+  position: fixed;
+  width: 100%;
+}
+.app-content-popup {
+	background-color: #fff;
+	box-sizing: border-box;
+  height: 100%;
+  padding: 40px 50px;
+  position: relative;
+}
+.app-content-popup-close {
+	background: url('./../icons/cancel.svg') 100% 100%/cover no-repeat;
+	border: none;
+	cursor: pointer;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 20px;
+}
+.app-content-popup-info {
+	height: 100%;
+	margin: auto;
+	max-width: 1368px;
+}
+.app-content-popup-info-header {
+	align-items: flex-end;
+	display: flex;
+	box-sizing: border-box;
+	flex-flow: row wrap;
+	margin: auto;
+  max-width: 1368px;
+	padding-bottom: 40px;
+	width: 100%;
+}
+.app-content-popup-info-header__title {
+	font-size: 2.2rem;
+	margin: 0;
+	width: 300px;
+}
+.app-content-popup-info-header__value {
+	font-size: 1.5rem;
+	margin: 0;
+	position: relative;
+}
+.app-content-popup-info-header__value.down,
+.app-content-popup-info-header__value.up {
+	margin-left: 25px;
+}
+.app-content-popup-info-stat {
+	display: flex;
+	flex-flow: row wrap;
+}
+.app-content-popup-info-stat__title {
+	font-size: .875rem;
+	margin-bottom: 15px;
+	width: 100%;
+}
+.app-content-popup-info-stat__table-wrap {
+	width: 300px;
+}
+.app-content-popup-info-stat__table {
+	width: 300px;
+}
+.app-content-popup-info-stat__table td {
+	font-size: .875rem;
+	padding: 5px 0;
+}
+.app-content-popup-info-trade {
+	display: flex;
+	flex-flow: row wrap;
+	height: calc(100% - 220px);
+	justify-content: center;
+	margin-top: 30px;
+}
+.app-content-popup-info-trade-table {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	height: 100%;
+	margin: 0 1% 15px 0;
+	min-width: 360px;
+	width: 49%;
+}
+.app-content-popup-info-trade-table-wrap {
+	height: 100%;
+	overflow-y: auto;
+}
+.app-content-popup-info-trade-table__header {
+	margin: 25px 0;
+	width: 18%;
+}
+.app-content-popup-info-trade-table-body {
+	margin-right: 15px;
+	min-width: 340px;
+}
+.app-content-popup-info-trade-table-body tr th:not(:last-child),
+.app-content-popup-info-trade-table-body tr td:not(:last-child) {
+	border-right: 1px solid #ccc;
+}
+.app-content-popup-info-trade-table-body__row_head,
+.app-content-popup-info-trade-table-body__row {
+	padding: 5px 10px;
+}
+.app-content-popup-info-trade-table-body__row_head {
+	font-size: .75rem;
+	text-align: left;
+}
+.app-content-popup-info-trade-table-body__row {
+	font-size: .875rem;
+}
+
+
+
+.loading {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.loading > div {
+	display: inline-block;
+}
+.loading__label {
+	font-size: .75rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+
+.app-error {
+	border: 1px solid red;
+	border-radius: 3px;
+	line-height: 1.4;
+	margin: 30px 15px;
+	padding: 15px;
+	width: 300px;
+}
+
+
+.no-scroll {
+	overflow: hidden;
+}
+
+/*POPUP ANIMATION*/
+
+
+/* 
+ * AFTER CHANGING ANIMATION DURATION PARAMETER
+ * BE SURE THAT NEW VALUE IS LESS OR EQUAL TO
+ * CONST animationDuration FROM Popup.js COMPONENT
+ */
+.popup-open {
+	animation: open .5s ease-in-out 0s;
+}
+.popup-closed {
+	animation: close .5s ease-in-out 0s forwards;
+}
+
+@keyframes open {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes close {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.parent-scrollbar {
+	display: none;
+}

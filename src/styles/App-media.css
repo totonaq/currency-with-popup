@@ -1,0 +1,60 @@
+@media all and (max-width: 1200px) {
+	.app-content-popup-info-trade-table__header {
+		margin: 0 0 25px;
+		width: 100%;
+	}
+	.app-content-popup-info-trade-table-wrap {
+		height: 90%;
+	}
+}
+
+@media all and (max-width: 992px) {
+	.app-content-popup-info-trade {
+		overflow-y: auto;
+	}
+	.app-content-popup-info-trade-table {
+		height: auto;
+		justify-content: center;
+		margin-right: 0;
+		width: 100%;
+	}
+	.app-content-popup-info-trade-table-wrap {
+		height: auto;
+	}
+	.simplebar-scrollbar {
+		opacity: 0;
+	}
+}
+
+@media all and (max-width: 800px) {
+	.app-content-popup-info-header {
+		justify-content: space-between;
+	}
+	.app-content-popup-info-header__title {
+		width: auto;
+	}
+	.app-content-popup-info-trade {
+		height: calc(100% - 268px);
+	}
+	.app-content-popup-info-stat__table-wrap {
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.app-content-currency-list {
+		justify-content: center;
+	}
+	.app-content-popup {
+		padding: 40px 20px;
+	}
+	.app-content-popup-wrap {
+		padding: 0;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.app-content-popup-info-trade {
+		justify-content: flex-start;
+	}
+}
