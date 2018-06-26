@@ -48,7 +48,7 @@ export const CurrencyList = connect(
 		} else {
 
 			localTicker = JSON.parse(localStorage.getItem('ticker'));
-
+	
 		}
 
 		return {
