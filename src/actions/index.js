@@ -1,17 +1,17 @@
 import { API_URL } from './../config';
-import { handleResponse } from './../helpers'
+import { handleResponse } from './../helpers';
 
 export const REQUEST_TICKER = 'REQUEST_TICKER';
 export const RECEIVE_TICKER = 'RECEIVE_TICKER';
 export const REQUEST_ORDER_BOOK = 'REQUEST_ORDER_BOOK';
 export const RECEIVE_ORDER_BOOK = 'RECEIVE_ORDER_BOOK';
+export const REQUEST_TICKER_FAILURE = 'REQUEST_TICKER_FAILURE';
+export const REQUEST_ORDER_BOOK_FAILURE = 'REQUEST_ORDER_BOOK_FAILURE';
+
 export const SHOW_POPUP = 'SHOW_POPUP';
 export const SHOWING_ANIMATION = 'SHOWING_ANIMATION';
 export const HIDE_POPUP = 'HIDE_POPUP';
 export const HIDING_ANIMATION = 'HIDING_ANIMATION';
-export const REQUEST_TICKER_FAILURE = 'REQUEST_TICKER_FAILURE';
-export const REQUEST_ORDER_BOOK_FAILURE = 'REQUEST_ORDER_BOOK_FAILURE';
-
 
 const requestTicker = () => ({
 	type: REQUEST_TICKER

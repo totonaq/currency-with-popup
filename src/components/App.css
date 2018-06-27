@@ -130,6 +130,10 @@ td {
 	top: 10px;
 	right: 10px;
 	width: 20px;
+	z-index: 1;
+}
+.app-content-popup-close:focus {
+	outline: none;
 }
 .app-content-popup-info {
 	height: 100%;
@@ -262,15 +266,15 @@ td {
 
 /*POPUP ANIMATION*/
 
+.popup-open {
+	animation: open .5s ease-in-out 0s;
+}
 
 /* 
  * AFTER CHANGING ANIMATION DURATION PARAMETER
  * BE SURE THAT NEW VALUE IS LESS OR EQUAL TO
  * CONST animationDuration FROM Popup.js COMPONENT
  */
-.popup-open {
-	animation: open .5s ease-in-out 0s;
-}
 .popup-closed {
 	animation: close .5s ease-in-out 0s forwards;
 }
