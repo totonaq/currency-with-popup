@@ -6,9 +6,9 @@ export const RECEIVE_TICKER = 'RECEIVE_TICKER';
 export const REQUEST_ORDER_BOOK = 'REQUEST_ORDER_BOOK';
 export const RECEIVE_ORDER_BOOK = 'RECEIVE_ORDER_BOOK';
 export const SHOW_POPUP = 'SHOW_POPUP';
-export const SHOW_ANIMATION = 'SHOW_ANIMATION';
+export const SHOWING_ANIMATION = 'SHOWING_ANIMATION';
 export const HIDE_POPUP = 'HIDE_POPUP';
-export const HIDE_ANIMATION = 'HIDE_ANIMATION';
+export const HIDING_ANIMATION = 'HIDING_ANIMATION';
 export const REQUEST_TICKER_FAILURE = 'REQUEST_TICKER_FAILURE';
 export const REQUEST_ORDER_BOOK_FAILURE = 'REQUEST_ORDER_BOOK_FAILURE';
 
@@ -82,20 +82,25 @@ const showPopup = currentPair => ({
 	currentPair
 });
 
-const showAnimation = () => ({
-	type: SHOW_ANIMATION
+const showingAnimation = () => ({
+	type: SHOWING_ANIMATION
 });
 
 export const showPopupWithUpdatedData = currentPair => dispatch => {
 	dispatch(showPopup(currentPair));
-	dispatch(showAnimation());
+	dispatch(showingAnimation());
 	dispatch(fetchData(currentPair));
 }
 
-export const hidePopup = () => ({
+const hidePopup = () => ({
 	type: HIDE_POPUP
 });
 
-export const hideAnimation = () => ({
-	type: HIDE_ANIMATION
+const hidingAnimation = () => ({
+	type: HIDING_ANIMATION
 });
+
+export const hidePopupWithAnimation = delay => dispatch => {
+	dispatch(hidingAnimation())
+	setTimeout(() => dispatch(hidePopup()), delay)
+};

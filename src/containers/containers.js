@@ -11,8 +11,7 @@ import Table from './../components/Table';
 import {
 	fetchData,
 	showPopupWithUpdatedData,
-	hidePopup,
-	hideAnimation
+	hidePopupWithAnimation
 } from './../actions';
 
 import {
@@ -77,7 +76,7 @@ export const CurrencyPopup = connect(
 		isInAnimation: state.popupParams.isInAnimation
 	}),
 
-	{ hidePopup, hideAnimation }
+	{ hidePopupWithAnimation }
 
 )(Popup)
 

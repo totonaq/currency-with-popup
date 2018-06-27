@@ -1,8 +1,8 @@
 import { 
 	SHOW_POPUP,
-	SHOW_ANIMATION,
+	SHOWING_ANIMATION,
 	HIDE_POPUP,
-	HIDE_ANIMATION
+	HIDING_ANIMATION
 } from './../actions';
 
 const initialState = {
@@ -17,7 +17,7 @@ const popupParams = (state = initialState, action) => {
 				isPopupMounted: true,
 				currentPair: action.currentPair
 			}
-		case SHOW_ANIMATION:
+		case SHOWING_ANIMATION:
 			return {
 				...state,
 				isInAnimation: true
@@ -28,7 +28,7 @@ const popupParams = (state = initialState, action) => {
 				isPopupMounted: false,
 				currentPair: {}
 			}
-		case HIDE_ANIMATION:
+		case HIDING_ANIMATION:
 			return {
 				...state,
 				isInAnimation: false

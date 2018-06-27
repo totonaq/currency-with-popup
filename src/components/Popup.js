@@ -18,29 +18,29 @@ class Popup extends Component {
 	componentWillUnmount() {
 		document.body.classList.remove('no-scroll')
 	}
-
-	runAnimationBeforeUnmounting() {
-
-		// after changing the value of this const
-		// be sure it is not less than
-		// animation duration parameter of
-		// .popup-open and .popup-closed classes 
-		// (see App.css)
-		const animationDuration = 600;
-
-		this.props.hideAnimation();
-
-		// delay unmounting to let closing animation run
-		setTimeout(() => this.props.hidePopup(), animationDuration);
-	}
 	
 	render () {
 
-		const { isFetchingTicker, isFetchingOrder, isInAnimation, orderBookError } = this.props;
+		const {
+			isFetchingTicker,
+			isFetchingOrder,
+			isInAnimation,
+			orderBookError,
+			hidePopupWithAnimation
+		} = this.props;
 
-		// right after its mounting the component receives in-animation class ('popup-open')
+
+		// right after it's mounting the component receives in-animation class ('popup-open')
 		// right before unmounting it receives out-animation class ('popup-closed')
 		const animationClass = isInAnimation ? ' popup-open' : ' popup-closed';
+
+
+		// before changing the value of this const
+		// be sure it is not less than
+		// animation duration parameter of
+		// .popup-closed class 
+		// (see App.css)
+		const animationDuration = 600;
 
 		return(
 			<section className={`app-content-popup-wrap${animationClass}`}>
@@ -48,9 +48,8 @@ class Popup extends Component {
 					<CurrencyInfoHeader />
 					<button
 						className="app-content-popup-close"
-						onClick={this.runAnimationBeforeUnmounting.bind(this)}>
+						onClick={() => hidePopupWithAnimation(animationDuration)}>
 					</button>
-					
 
 						{
 							(isFetchingTicker || isFetchingOrder) ?
@@ -80,8 +79,7 @@ Popup.propTypes = {
 	orderBookError: PropTypes.bool.isRequired,
 	isInAnimation: PropTypes.bool.isRequired,
 	currentPair: PropTypes.string.isRequired,
-	hidePopup: PropTypes.func.isRequired,
-	hideAnimation: PropTypes.func.isRequired
+	hidePopupWithAnimation: PropTypes.func.isRequired
 }
 
 export default Popup
