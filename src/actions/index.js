@@ -62,7 +62,7 @@ const requestOrderBookFailure = () => ({
 	type: REQUEST_ORDER_BOOK_FAILURE
 });
 
-const fetchOrderBook = pair => (dispatch, state) => {
+const fetchOrderBook = pair => dispatch => {
 	dispatch(requestOrderBook())
 
 	fetch(`${API_URL}/order_book/?pair=${pair}`)
