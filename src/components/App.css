@@ -1,4 +1,5 @@
 body {
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
 h1, h2, h3, p {
@@ -8,6 +9,7 @@ h1, h2, h3, p {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	
 }
 td {
 	padding: 0;
@@ -26,6 +28,7 @@ td {
 	text-transform: uppercase;
 }
 .app-header__text {
+	
 	margin: 15px;
 }
 
@@ -69,12 +72,18 @@ td {
 	color: #219653;
 }
 .app-content-currency-list-item__value {
+	display: flex;
+	flex-flow: row wrap;
 	font-size: 1rem;
 	font-weight: bold;
+	justify-content: flex-end;
 	margin: 0;
 	text-align: right;
 }
 .app-content-currency-list-item__value span {
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap;
 	position: relative;
 }
 .app-content-currency-list-item__value span:before,
@@ -90,7 +99,6 @@ td {
 .app-content-popup-info-header__value:before {
 	height: 20px;
 	left: -25px;
-	top: 4px;
 	width: 20px;
 }
 .app-content-currency-list-item__value.down span:before,
@@ -105,13 +113,13 @@ td {
 
 .app-content-popup-wrap {
 	background-color: rgba(0,0,0,.85);
-	bottom: 0;
   box-sizing: border-box;
   display: block;
   height: 100vh;
   left: 0;
   padding: 50px;
   position: fixed;
+  top: 0;
   width: 100%;
 }
 .app-content-popup {
@@ -162,6 +170,9 @@ td {
 }
 .app-content-popup-info-header__value.down,
 .app-content-popup-info-header__value.up {
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap;
 	margin-left: 25px;
 }
 .app-content-popup-info-stat {
@@ -177,7 +188,7 @@ td {
 	width: 300px;
 }
 .app-content-popup-info-stat__table {
-	width: 300px;
+	width: 320px;
 }
 .app-content-popup-info-stat__table td {
 	font-size: .875rem;
